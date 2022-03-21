@@ -1,1 +1,1 @@
-Parameter model
+A parameterizable component model project
