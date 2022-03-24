@@ -15,13 +15,29 @@ class Formula:
         """
         pass
 
-    
+    def get_derrived_value(self, **sources):
+        """
+        accept the sources using dictionary and calculate the derrived value by sympy
+        """
+        pass
+
+    def check_constraint(self, **conditions):
+        """
+        accept the conditions using dictionary and check the constraint by constraint solver
+        """
+        pass
 
 if __name__ =='__main__':
     print('Formula test')
-    parse_eq = parse_latex(r"I_C=\frac{V_{\CC}-V_E}{R_E}")
 
-    for i in parse_eq.args:
-        SL.check_symbol(i)
+    formula = Formula('Formula_test')
+    formula.set_formula(r"I_C=\frac{V_{\CC}-V_E}{R_E}")
+    formula.get_derrived_value()
+
+
+    # parse_eq = parse_latex(r"I_C=\frac{V_{\CC}-V_E}{R_E}")
+
+    # for i in parse_eq.args:
+    #     SL.check_symbol(i)
         
-    print(latex(SL.formula_dict('I_{C}', {'V_{E}':20, 'V_{C*C}':30})))
+    # print(latex(SL.formula_dict('I_{C}', {'V_{E}':20, 'V_{C*C}':30})))
