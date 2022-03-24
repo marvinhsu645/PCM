@@ -1,4 +1,6 @@
-from sympy import *
+from sympy import latex
+from sympy.parsing.latex import parse_latex
+import sympy_latex as SL
 
 class Formula:
     def __init__(self, name):
@@ -17,3 +19,9 @@ class Formula:
 
 if __name__ =='__main__':
     print('Formula test')
+    parse_eq = parse_latex(r"I_C=\frac{V_{\CC}-V_E}{R_E}")
+
+    for i in parse_eq.args:
+        SL.check_symbol(i)
+        
+    print(latex(SL.formula_dict('I_{C}', {'V_{E}':20, 'V_{C*C}':30})))
